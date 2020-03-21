@@ -55,6 +55,18 @@ typedef struct {
 }dinamic_queue;
 
 void Dinit (dinamic_queue *q){
+
+    *q = (dinamic_queue){
+        .size = 5,// valor inicial arbitrário
+        .inicio = 0,
+        .tamanho = 0,
+        .valores = malloc(q->size * sizeof(int))
+    };
+}
+
+//forma alternativa
+
+void Dinit2 (dinamic_queue *q){
     q->size = 5; // valor inicial arbitrário
     q->inicio = 0;
     q->tamanho = 0;
